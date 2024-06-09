@@ -1,0 +1,61 @@
+@layer Base, Layout, Interactions, States, Components;
+
+@layer Base {
+    :root {
+        background-color: aliceblue;
+    }
+}
+
+@layer Layout {
+ 
+}
+
+@layer Interactions {
+
+}
+
+@layer States {
+
+}
+
+@layer Components {
+    [data-role="switch"] {
+        appearance: none;
+        block-size: 2ch;
+        border-radius: 2ch;
+        border: solid 1px;
+        container-type: inline-size;
+        cursor:pointer;
+        display: inline-block;
+        inline-size: 5ch;
+        position: relative;
+    
+        label:has(&) {
+            display: grid;
+            gap: .5rem;
+            grid-template-columns: 1fr 2ch;
+            place-items: center;
+            width: max-content;
+    
+            &:not(:has(:checked)) [title="dark"],
+            &:has(:checked) [title="light"] {
+                display: none;
+            }
+        }
+    
+        &:after {
+            aspect-ratio: 1;
+            background: black;
+            block-size: 100%;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            inset-inline-start: 0;
+            transition: transform 0.2s ease;
+        }
+    
+        &:checked:after {
+            transform: translateX(calc(100cqw - 100%));
+        }
+    } 
+}
