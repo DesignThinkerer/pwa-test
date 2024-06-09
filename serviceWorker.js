@@ -1,9 +1,9 @@
 const staticScidelice = "scidelice-site-v1"
 const assets = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/app.js"
+  "./",
+  "./index.html",
+  "./style.css",
+  "./app.js"
 ]
 
 self.addEventListener("install", installEvent => {
